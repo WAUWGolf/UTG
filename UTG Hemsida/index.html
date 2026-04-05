@@ -367,7 +367,9 @@
 
     /* Hero Section */
     .hero {
+      padding: 0;
       padding-top: 68px;
+      max-width: none;
       position: relative;
       min-height: 85vh;
       display: flex;
@@ -399,7 +401,8 @@
       max-width: 700px;
       position: relative;
       z-index: 1;
-      padding: 80px 48px;
+      padding: 80px clamp(24px, 4vw, 48px);
+      margin-left: clamp(24px, 6vw, 80px);
     }
 
     .hero h1, .hero .section-label, .hero p {
