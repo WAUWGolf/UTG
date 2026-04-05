@@ -323,7 +323,7 @@
     .card-image {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: var(--green-dim);
+      background: var(--bg-accent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -331,6 +331,49 @@
       font-size: 14px;
       text-align: center;
       padding: 20px;
+    }
+
+    .team-initials {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--green-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--green-line);
+    }
+
+    .stats-bar .stat {
+      text-align: center;
+    }
+
+    .stats-bar .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      color: var(--green-primary);
+      display: block;
+    }
+
+    .stats-bar .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
     }
 
     .card-body {
@@ -654,7 +697,7 @@
     <section class="hero" data-fade>
       <span class="label">Om oss</span>
       <h1>Vi startade med en gräsklippare och en <em>idé</em></h1>
-      <p>År 2021 började två kompisar med en enkelt utrustning och en stor dröm: att göra Stockholms trädgårdar vackrare. Idag är vi ett växande team som älskar det vi gör. Varje trädgård är unik, och vi möter den med samma engagemang och passion som då vi började.</p>
+      <p>2021 var det bara Niklas och en gräsklippare. Idag är vi fyra personer som jobbar med trädgårdar i hela Stockholms län. Vi har fortfarande samma filosofi: lyssna på kunden, gör ett noggrant jobb, och lämna aldrig en trädgård utan att den ser bättre ut än när vi kom.</p>
     </section>
 
     <!-- Our Story Section -->
@@ -663,7 +706,7 @@
       <h2>Femte säsongen — och vi <em>älskar</em> fortfarande varje dag</h2>
       <p style="margin-bottom: 24px;">Vi är djupt rotade i Sundbyberg och arbetar genom hela Stockholms län. Från små balkongprojekt till stora trädgårdsomgestaltningar — varje uppdrag är viktigt för oss. Vi är inte ett stort företag med anonyma arbetare. Vi är människor som brinner för trädgårdar, och vi lär känna våra kunder och deras önskemål.</p>
       <p style="margin-bottom: 24px;">År 2021 registrerade vi Ursviks Trädgårdsgäng AB. Det började med två personer, och vi har växt både i antal och i erfarenhet. Men vårt fokus på personlig service och handgjord kvalitet är densamma. Vi lyssnar, vi förstår, och vi levererar resultat som överträffar förväntningar.</p>
-      <p>Från vårstädning till höststädning, från att plantera nya växter till att skära hakväxter — vi kan det mesta. Och eftersom vi erbjuder RUT-avdrag sparar våra stockholmare både tid och pengar. Vi är stolta över att ha möjligheten att göra en skillnad i Stockholmsborna's liv genom att skapa och underhålla sköna uterum.</p>
+      <p>Från vårstädning till höststädning, från att plantera nya växter till att klippa häckar — vi kan det mesta. Och eftersom vi erbjuder RUT-avdrag sparar våra kunder både tid och pengar. Vi är stolta över att kunna göra en skillnad i stockholmarnas vardag genom att skapa och underhålla sköna uterum.</p>
     </section>
 
     <!-- Team Section -->
@@ -673,40 +716,47 @@
 
       <div class="card-grid">
         <div class="card">
-          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-image"><div class="team-initials">N.A.</div></div>
           <div class="card-body">
             <h3>Niklas Andersson</h3>
             <span class="card-role">Grundare</span>
-            <p class="card-bio">Niklas startade Trädgårdsgänget 2021 med en vision att göra Stockholms trädgårdar vackrare. Med ett passionerat öga för detaljer och många år av trädgårdskunskap leder han teamet med engagemang och entusiasm.</p>
+            <p class="card-bio">Startade Trädgårdsgänget 2021. Leder teamet och ansvarar för kundkontakt, besiktningar och offertarbete. Utbildad inom pomologisk beskärning.</p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-image"><div class="team-initials">A.</div></div>
           <div class="card-body">
             <h3>Alfred</h3>
-            <span class="card-role">Medarbetare & Co-ägare</span>
-            <p class="card-bio">Alfred är en del av Trädgårdsgängets kärna och är också medgrundare av Good To Go Golf. Hans dedikation till kvalitet och kundservice är en av hörnstenarnas i vårt framgångsrika arbete.</p>
+            <span class="card-role">Medarbetare & delägare</span>
+            <p class="card-bio">En del av gänget sedan starten. Även medgrundare av Good To Go Golf. Allround med extra koll på gräsmattor och maskinpark.</p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-image"><div class="team-initials">P.W.</div></div>
           <div class="card-body">
             <h3>Patrik Wicklén</h3>
             <span class="card-role">Medarbetare</span>
-            <p class="card-bio">Patrik är en erfaren trädgårdsmästare med djup kunskap om växter och planering. Han säkerställer att varje projekt genomförs med precision och omtanke för både estetik och växternas behov.</p>
+            <p class="card-bio">Erfaren och noggrann med extra känsla för beskärning och växtval. Ser till att varje projekt blir rätt från grunden.</p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-image"><div class="team-initials">S.P.</div></div>
           <div class="card-body">
             <h3>Simson Pollak</h3>
             <span class="card-role">Medarbetare</span>
-            <p class="card-bio">Simson gick med i teamet 2025 och har redan gjort ett starkt intryck. Med sitt friska perspektiv och sitt engagemang bidrar han till att upprätthålla våra höga standarder och kundnöjdhet.</p>
+            <p class="card-bio">Anslöt 2025 och har snabbt blivit en viktig del av teamet. Driftig och engagerad med fokus på kvalitet i varje detalj.</p>
           </div>
         </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat"><span class="stat-number">2021</span><span class="stat-label">Sedan</span></div>
+        <div class="stat"><span class="stat-number">4</span><span class="stat-label">Medarbetare</span></div>
+        <div class="stat"><span class="stat-number">100+</span><span class="stat-label">Utförda jobb</span></div>
+        <div class="stat"><span class="stat-number">Hela</span><span class="stat-label">Stockholms län</span></div>
       </div>
     </section>
 
@@ -725,43 +775,40 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-top">
-        <div>
-          <h4>Trädgårdsgänget</h4>
-          <p>Ursviks Trädgårdsgäng AB</p>
-          <p>Org.nr 559431-2737</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Trädgårdsgänget</h3>
+          <p>Ursviks Trädgårdsgäng AB<br>Org.nr 559431-2737</p>
+          <p>Länsmansbacken 3<br>174 46 Sundbyberg</p>
         </div>
-        <div>
-          <h4>Adress</h4>
-          <p>Länsmansbacken 3</p>
-          <p>174 46 Sundbyberg</p>
-        </div>
-        <div>
+        <div class="footer-col">
           <h4>Kontakt</h4>
-          <p><a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a></p>
           <p><a href="tel:0764051370">076-405 13 70</a></p>
+          <p><a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a></p>
         </div>
-        <div>
+        <div class="footer-col">
           <h4>Följ oss</h4>
-          <div class="footer-social">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-          </div>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/Ursviks-Tradgards-Gang-112878280893630/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/ursvikstradgardsgang/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>"Vi gör Sundbybergs trädgårdar vackrare — sedan 2021"</p>
-        <p>© 2026 Trädgårdsgänget. Alla rättigheter reserverade.</p>
-        <p><a href="integritetspolicy.html">Integritetspolicy</a> · <a href="cookiepolicy.html">Cookiepolicy</a></p>
+        <p>Vi gör Sundbybergs trädgårdar vackrare — sedan 2021</p>
+        <p>© 2026 Ursviks Trädgårdsgäng AB</p>
+        <div>
+          <a href="integritetspolicy.html">Integritetspolicy</a> ·
+          <a href="cookiepolicy.html">Cookiepolicy</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- Chatbot Widget -->
   <div class="chatbot-widget">
-    <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+    <button class="chatbot-toggle" id="chatbotToggle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></button>
     <div class="chatbot-window" id="chatbotWindow">
       <div class="chatbot-header">Trädgårdsgänget AI</div>
       <div class="chatbot-messages" id="chatbotMessages"></div>

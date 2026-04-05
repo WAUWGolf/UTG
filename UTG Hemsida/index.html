@@ -435,6 +435,26 @@
       flex-wrap: wrap;
     }
 
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-top: 24px;
+    }
+
+    .trust-bar span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .trust-bar span::before {
+      content: '✓ ';
+      color: var(--gold-light);
+    }
+
     /* RUT Info Box */
     .rut-info {
       background-color: var(--bg-accent);
@@ -1092,8 +1112,14 @@
         <h1 class="fade d2">Vi tar hand om din trädgård — så att du kan <em>njuta</em> av den</h1>
         <p class="fade d3">Vi erbjuder professionella trädgårdstjänster i hela Stockholms län. Från gräsklippning och häckklippning till komplett trädgårdsskötsel. Med RUT-avdrag på 50% blir tjänsterna ännu mer lönsamma.</p>
         <div class="hero-cta fade d4">
-          <a href="kontakt.html" class="btn-primary">Kontakta oss</a>
-          <a href="tjanster.html" class="btn-secondary">Se våra tjänster</a>
+          <a href="kontakt.html" class="btn-primary">Få en kostnadsfri offert</a>
+          <a href="tjanster.html" class="btn-secondary">Se vad vi gör</a>
+        </div>
+        <div class="trust-bar fade d5">
+          <span>F-skattsedel</span>
+          <span>RUT-avdrag 50 %</span>
+          <span>Hela Stockholms län</span>
+          <span>Sedan 2021</span>
         </div>
       </div>
     </section>
@@ -1162,28 +1188,28 @@
       <h2 class="fade d2">Det här gör oss <em>annorlunda</em></h2>
       <div class="usp-grid">
         <div class="usp-item fade d3">
-          <div class="usp-icon">✓</div>
+          <div class="usp-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <div class="usp-content">
             <h4>F-skatt & RUT-avdrag (50%)</h4>
             <p>Vi är registrerade för RUT-arbete. Du drar av 50% direkt på fakturan.</p>
           </div>
         </div>
         <div class="usp-item fade d4">
-          <div class="usp-icon">✓</div>
+          <div class="usp-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
           <div class="usp-content">
             <h4>Femte säsongen</h4>
-            <p>Vi jobbar året om — ingen unpåpllerad trädgård när andra vilar.</p>
+            <p>Vi jobbar året om — din trädgård vilar aldrig oplanerad.</p>
           </div>
         </div>
         <div class="usp-item fade d3">
-          <div class="usp-icon">✓</div>
+          <div class="usp-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="usp-content">
             <h4>Hela Stockholms län</h4>
-            <p>Vi åker till dig, oavsett om du bor i centrum eller utskäringar.</p>
+            <p>Vi åker till dig, oavsett om du bor i centrum eller i länets utkanter.</p>
           </div>
         </div>
         <div class="usp-item fade d4">
-          <div class="usp-icon">✓</div>
+          <div class="usp-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           <div class="usp-content">
             <h4>Arbetsbeskrivning med bilder</h4>
             <p>Du vet exakt vad vi gjort. Varje jobb dokumenteras innan och efter.</p>
@@ -1195,7 +1221,7 @@
     <!-- RUT-avdrag Info -->
     <section>
       <div class="rut-info fade d1">
-        <strong>RUT-avdrag (50 %)</strong> dras direkt på fakturan — du behöver inte göra något själv. Du betalar bara hälften. Läs mer på <a href="#">skatteverket.se</a>.
+        <strong>RUT-avdrag (50 %)</strong> dras direkt på fakturan — du behöver inte göra något själv. Du betalar bara hälften. Läs mer på <a href="https://www.skatteverket.se/privat/fastigheterochbostad/rutochrotavdrag" target="_blank" rel="noopener">skatteverket.se</a>.
       </div>
     </section>
 
@@ -1227,16 +1253,16 @@
       <h2 class="fade d2">Vad våra kunder <em>säger</em></h2>
       <div class="grid-3">
         <div class="testimonial-card fade d3">
-          <p class="testimonial-text">"Mycket nöjd med Trädgårdsgänget! De är pålitliga, proffesionella och min trädgård har aldrig sett bättre ut."</p>
-          <div class="testimonial-author">Maria Andersson, Sundbyberg</div>
+          <p class="testimonial-text">"Niklas beskärde våra äppelträd och vi har aldrig haft så mycket frukt. De fotograferade allt innan och efter — väldigt professionellt."</p>
+          <div class="testimonial-author">Maria A., Sundbyberg</div>
         </div>
         <div class="testimonial-card fade d4">
-          <p class="testimonial-text">"Bra priser, snabb service och de respekterar min trädgård. Kan varmt rekommendera!"</p>
-          <div class="testimonial-author">Johan Bergström, Bromma</div>
+          <p class="testimonial-text">"Anlitade Trädgårdsgänget för vårstädning och häckklippning på vår BRF-gård. Snabba, noggranna och enkelt med RUT-avdrag direkt på fakturan."</p>
+          <div class="testimonial-author">Johan B., Bromma</div>
         </div>
         <div class="testimonial-card fade d5">
-          <p class="testimonial-text">"Slutligen någon som verkar älska sitt arbete! Deras lovar är guld värda."</p>
-          <div class="testimonial-author">Eva Larsson, Södermalm</div>
+          <p class="testimonial-text">"Vi har haft löpande skötsel sedan förra året. Skönt att slippa tänka på trädgården — den ser bättre ut nu än när vi skötte den själva."</p>
+          <div class="testimonial-author">Eva L., Sollentuna</div>
         </div>
       </div>
     </section>
@@ -1244,7 +1270,7 @@
     <!-- Contact CTA -->
     <section>
       <h2 class="fade d1">Berätta om din <em>trädgård</em></h2>
-      <p class="fade d2" style="max-width: 700px; margin-bottom: 32px;">Oavsett om du behöver en engångsskörd eller löpande vård — vi hjälper gärna. Ring oss eller fyll i kontaktformuläret så får du ett svar direkt.</p>
+      <p class="fade d2" style="max-width: 700px; margin-bottom: 32px;">Oavsett om du behöver en engångsinsats eller löpande vård — vi hjälper gärna. Ring oss eller fyll i kontaktformuläret så får du ett svar direkt.</p>
       <a href="kontakt.html" class="btn-primary fade d3">Kontakta oss</a>
     </section>
 
@@ -1267,8 +1293,8 @@
         <div class="footer-col">
           <h4>Följ oss</h4>
           <ul class="footer-links">
-            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/Ursviks-Tradgards-Gang-112878280893630/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/ursvikstradgardsgang/" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </div>

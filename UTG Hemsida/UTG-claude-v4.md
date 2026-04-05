@@ -1,5 +1,5 @@
 # Trädgårdsgänget — claude.md
-### Komplett projektinstruktion för webbplats · Version 3.0
+### Komplett projektinstruktion för webbplats · Version 4.0
 ### Ursviks Trädgårdsgäng AB · tradgardsganget.se
 
 > **Hur du använder det här dokumentet**
@@ -842,8 +842,161 @@ Checkboxar för: snöröjning, halkbekämpning, vinterskydd, julbelysning.
 
 ---
 
+## DEL 11 — UX/UI AUDIT & ÅTGÄRDSLISTA (april 2026)
+
+> **Bakgrund:** En fullständig granskning av utgab.netlify.app (5 sidor) visade att sajten har en solid grund men halkar efter offerternas kvalitetsnivå. Designsystemet i detta dokument (del 2–3) följs inte fullt ut i den publicerade koden. Nedan följer konkreta åtgärder, prioriterade. Arbeta igenom dem uppifrån och ner.
+
+### 🔴 KRITISKT — fixa omedelbart
+
+#### Stavfel som skadar trovärdigheten
+
+| Sida | Fel | Rätt | Var |
+|------|-----|------|-----|
+| Startsidan | unpåpllerad | oplanerad | "Varför oss" — femte säsongen |
+| Startsidan | utskäringar | utkanter | "Varför oss" — Stockholms län |
+| Startsidan | proffesionella | professionella | Kundcitat, Maria Andersson |
+| Startsidan | engångsskörd | engångsinsats | CTA-sektion längst ner |
+| Startsidan | Deras lovar är guld värda | Deras löften är guld värda | Kundcitat, Eva Larsson |
+| Om oss | enkelt utrustning | enkel utrustning | Inledande stycket |
+| Om oss | hakväxter | häckväxter | Tredje stycket |
+| Om oss | Stockholmsborna's | stockholmarnas | Tredje stycket |
+| Om oss | skära hakväxter | klippa häckar | Tredje stycket |
+
+#### Inkonsekvent footer
+
+Footern ser olika ut på varje sida. Startsidan har en layout, tjänstesidan har en annan (med emoji-ikoner 📷👍📍 istället för SVG-ikoner). **Åtgärd:** Använd exakt samma footer-HTML på alla sidor — den kanoniska footern definierad i DEL 3.
+
+#### Fel telefonnummer på tjänstesidan
+
+Header-CTA:n "Ring oss →" på `/tjanster` pekar på `tel:+46701234567` — fel nummer. **Rätt:** `tel:0764051370`
+
+---
+
+### 🟡 HÖG PRIORITET — denna vecka
+
+#### 1. Teamfoton på Om oss-sidan
+
+**Problem:** Alla fyra teammedlemmar visar "Fotografi ej tillgängligt" — ser oprofessionellt ut.
+
+**Åtgärd:**
+- Ta riktiga foton (mobilbild i en trädgård räcker)
+- Tills dess: ta bort texten "Fotografi ej tillgängligt" och visa initialer i grön cirkel (N.A., A., P.W., S.P.) — samma stil som offertens avsändar-info
+
+#### 2. Kundcitat behöver trovärdighet
+
+**Problem:** Tre generiska citat utan substans. Inget nämner vad som gjordes. Ser påhittade ut.
+
+**Åtgärd — välj en av dessa:**
+- **Bäst:** Integrera Google-recensioner (Elfsight-widget eller manuellt med Google-ikon + länk)
+- **Alternativ:** Be riktiga kunder om citat som inkluderar: förnamn + initial, stadsdel, och VAD som gjordes ("Niklas beskärde våra äppelträd och vi har aldrig haft så mycket frukt")
+- Lägg till stjärnbetyg om ni har Google-betyg
+
+#### 3. Skriv om Om oss-texten
+
+**Problem:** Texten känns generisk och AI-skriven.
+
+**Nuvarande:** "År 2021 började två kompisar med en enkelt utrustning och en stor dröm: att göra Stockholms trädgårdar vackrare..."
+
+**Förslag:**
+```
+2021 var det bara Niklas och en gräsklippare. Idag är vi fyra personer
+som jobbar med trädgårdar i hela Stockholms län. Vi har fortfarande
+samma filosofi: lyssna på kunden, gör ett noggrant jobb, och lämna
+aldrig en trädgård utan att den ser bättre ut än när vi kom.
+```
+
+Lägg också till en nyckeltal-rad:
+```
+Sedan 2021 · 4 medarbetare · Hela Stockholms län · [X]+ utförda jobb
+```
+
+#### 4. Hero-sektionens CTA:er
+
+**Nuläge:** "Kontakta oss" + "Se våra tjänster" — generiskt.
+
+**Förslag:**
+- Primär: "Få en kostnadsfri offert" → /kontakt
+- Sekundär: "Se vad vi gör" → /tjanster
+
+Lägg till en trust-bar direkt under CTA-knapparna:
+```
+F-skattsedel · RUT-avdrag 50 % · Hela Stockholms län · Sedan 2021
+```
+Använd `section-label`-stilen (11px, spärrade versaler, grön).
+
+---
+
+### 🟢 MEDEL PRIORITET — denna månad
+
+#### 5. Varför oss-sektionen — skriv om + byt ikoner
+
+**Problem:** Använder ✓-tecken. Copy har stavfel.
+
+**Åtgärd:**
+- Byt ✓ mot riktiga SVG-ikoner (sköld för F-skatt, kalender för året-runt, karta för Stockholms län, kamera för bildbevis)
+- Skriv om:
+  - "Femte säsongen" → "Vi jobbar året om — din trädgård vilar aldrig oplanerad."
+  - "Hela Stockholms län" → "Vi åker till dig, oavsett om du bor i centrum eller i länets utkanter."
+- Skatteverket-länken i RUT-rutan pekar på `#` — byt till `https://www.skatteverket.se/privat/fastigheterochbostad/rutochrotavdrag`
+
+#### 6. Löpande skötsel — starkare visuell tyngd
+
+**Problem:** Sektionen syns men har inte den tyngd den förtjänar som huvuderbjudande för återkommande intäkter.
+
+**Åtgärd:**
+- Använd `.btn-gold` (inte `.btn-primary`) för CTA:n "Boka kostnadsfritt samtal"
+- Lägg till en ikon-rad ovanför listan (kalender, sax, löv, snöflinga)
+- Överväg att flytta sektionen högre upp på startsidan — direkt efter tjänstekorten
+
+#### 7. Kontaktsidan — förbättrad UX
+
+**Åtgärder:**
+- Lägg till förväntningstext: "Vi svarar inom 24 timmar, oftast samma dag"
+- Formulärvalidering med tydliga felmeddelanden på svenska
+- Bekräftelsemeddelande efter inskickat formulär: "Tack! Vi hör av oss inom kort."
+- Gör telefonnumret mer framträdande — stor klickbar knapp högst upp
+
+#### 8. AI-chatten — konsekvent design
+
+**Problem:** Chatten ser olika ut på startsidan vs undersidorna. Använder 💬 emoji istället för ikon.
+
+**Åtgärd:**
+- Samma chat-widget-HTML på alla sidor
+- Byt 💬 mot en SVG-ikon i skogsgrön
+- Om chatten inte fungerar tillförlitligt: ta bort den hellre än att ha en halvfärdig upplevelse
+
+---
+
+### 🔵 FRAMTIDA FÖRBÄTTRINGAR
+
+#### 9. Före/efter-galleri (ny sektion eller sida)
+
+Skapa en sektion med före/efter-bilder från utförda jobb:
+- Före-bild + efter-bild sida vid sida
+- Kort beskrivning av arbetet + stadsdel
+- Ger stark social proof och visar kvalitet
+
+#### 10. Prisindikation (kräver ändring av copy-regeln)
+
+> **OBS:** Nuvarande regel i DEL 7 säger "INGA priser på hemsidan". Överväg att ändra detta — offertdokumenten visar priser tydligt och professionellt. Potentiella kunder vill ha en känsla för prisnivån innan de tar kontakt.
+>
+> **Förslag:** Visa riktpriser som "Från X kr efter RUT" på tjänstekorten. Disclaimer: "Slutpris fastställs efter besiktning." Detta sänker tröskeln att ta kontakt och filtrerar bort kunder som inte matchar er prisnivå.
+
+#### 11. Google Reviews-integration
+
+Integrera era Google-omdömen direkt på startsidan. Visar verifierade recensioner automatiskt.
+
+#### 12. Enkel prisräknare
+
+Interaktiv kalkylator på tjänstesidan:
+- Välj tjänst → ange storlek/antal → se uppskattad kostnad efter RUT
+- Disclaimer: "Slutpris fastställs efter besiktning"
+
+---
+
 ## VERSIONERING
 
 - v1.0 — April 2026 (initial, ljus design med egen palett)
 - v2.0 — April 2026 (offertens designspråk: skogsgrön, guld, riktpriser, merförsäljning)
 - v3.0 — April 2026 (priser borttagna från sajten, kunskapsbasen separerad till tg-knowledge.md, vintertjänster-sida, kundresa-sektion tillagd)
+- v4.0 — April 2026 (UX/UI-audit integrerad: stavfellista, footer-konsistens, telefonnummer-fix, copy-förbättringar, designrekommendationer, framtida roadmap)
