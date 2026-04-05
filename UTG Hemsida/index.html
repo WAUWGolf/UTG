@@ -367,18 +367,52 @@
 
     /* Hero Section */
     .hero {
-      padding-top: 160px;
-      padding-bottom: 100px;
-      background-color: var(--bg-primary);
+      padding-top: 68px;
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(26,42,16,0.82) 0%, rgba(26,42,16,0.55) 50%, rgba(26,42,16,0.15) 100%);
     }
 
     .hero-content {
       max-width: 700px;
+      position: relative;
+      z-index: 1;
+      padding: 80px 48px;
+    }
+
+    .hero h1, .hero .section-label, .hero p {
+      color: var(--text-on-dark);
+    }
+
+    .hero .section-label {
+      color: rgba(242, 242, 236, 0.7);
     }
 
     .hero p {
       font-size: 18px;
-      color: var(--text-body);
+      color: rgba(242, 242, 236, 0.9);
       margin-bottom: 40px;
       line-height: 1.8;
     }
@@ -908,8 +942,15 @@
       }
 
       .hero {
-        padding-top: 120px;
-        padding-bottom: 60px;
+        min-height: 70vh;
+      }
+
+      .hero-content {
+        padding: 100px 24px 60px;
+      }
+
+      .hero-image::after {
+        background: linear-gradient(to bottom, rgba(26,42,16,0.8) 0%, rgba(26,42,16,0.5) 100%);
       }
 
       .hero-cta {
@@ -1030,6 +1071,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
+      <div class="hero-image">
+        <img src="bilder/hero.jpg" alt="Trädgårdsgänget beskär ett äppelträd i en villaträdgård">
+      </div>
       <div class="hero-content">
         <div class="section-label fade d1">Trädgårdstjänster i Stockholms län</div>
         <h1 class="fade d2">Vi tar hand om din trädgård — så att du kan <em>njuta</em> av den</h1>
