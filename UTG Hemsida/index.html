@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trädgårdsgänget — Professionella trädgårdstjänster i Stockholms län</title>
+  <meta name="description" content="Professionella trädgårdstjänster med RUT-avdrag i hela Stockholms län. Beskärning, gräsklippning, häckklippning och komplett trädgårdsskötsel.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trädgårdsgänget — Professionella trädgårdstjänster i Stockholms län">
+  <meta property="og:description" content="Professionella trädgårdstjänster med RUT-avdrag i hela Stockholms län.">
+  <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://tradgardsganget.se">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Custom Properties */
+    :root {
+      --bg-primary: #FAFAF5;
+      --bg-secondary: #F2F2EC;
+      --bg-accent: #EDF3EA;
+      --bg-dark: #1A2A10;
+      --bg-white: #FFFFFF;
+      --green-primary: #2D5016;
+      --green-hover: #3A6B1E;
+      --green-light: #4A8028;
+      --green-dim: rgba(45, 80, 22, 0.06);
+      --green-line: rgba(45, 80, 22, 0.18);
+      --gold: #8B7533;
+      --gold-light: #A89245;
+      --gold-dim: rgba(139, 117, 51, 0.08);
+      --gold-line: rgba(139, 117, 51, 0.20);
+      --text-primary: #1A1A1A;
+      --text-body: #3D3D3D;
+      --text-muted: rgba(26, 26, 26, 0.55);
+      --text-dim: rgba(26, 26, 26, 0.35);
+      --text-on-dark: #F2F2EC;
+      --text-on-dark-muted: rgba(242, 242, 236, 0.6);
+      --text-on-green: #FFFFFF;
+    }
+
+    /* Reset & Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-body);
+      background-color: var(--bg-primary);
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' seed='1'/%3E%3C/filter%3E%3Crect width='100' height='100' fill='%23000' filter='url(%23noise)' opacity='0.012'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+    }
+
+    h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--green-primary);
+    }
+
+    a {
+      color: var(--green-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--green-hover);
+    }
+
+    /* Section Label */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-primary);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-hover);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--green-primary);
+      border: 1px solid var(--green-primary);
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--text-on-green);
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-light);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--green-primary);
+      border: none;
+      border-bottom: 1px solid var(--green-primary);
+      cursor: pointer;
+      font-size: 15px;
+      padding: 0;
+      transition: color 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover {
+      color: var(--green-hover);
+      border-bottom-color: var(--green-hover);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 68px;
+      background-color: rgba(250, 250, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--green-line);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
+
+    nav .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--green-primary);
+      white-space: nowrap;
+    }
+
+    .nav-logo-img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+    }
+
+    nav .nav-links a {
+      font-size: 14px;
+      color: var(--text-body);
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--green-primary);
+    }
+
+    nav .btn-call {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green-primary);
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    nav .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    nav .hamburger span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--green-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--green-line);
+      z-index: 999;
+      flex-direction: column;
+      padding: 24px;
+      gap: 16px;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--text-body);
+      font-size: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--green-dim);
+    }
+
+    /* Main Content */
+    main {
+      position: relative;
+      z-index: 1;
+      padding-top: 68px;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--green-line);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--green-primary);
+      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+    }
+
+    /* Image Placeholder */
+    .img-placeholder {
+      background-color: var(--bg-accent);
+      aspect-ratio: 16 / 10;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 24px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 160px;
+      padding-bottom: 100px;
+      background-color: var(--bg-primary);
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-body);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* RUT Info Box */
+    .rut-info {
+      background-color: var(--bg-accent);
+      border-left: 3px solid var(--green-primary);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 40px 0;
+      font-size: 15px;
+      color: var(--text-body);
+    }
+
+    /* Upsell Box */
+    .upsell-box {
+      background-color: var(--gold-dim);
+      border: 1px solid var(--gold-line);
+      border-radius: 12px;
+      padding: 40px;
+      margin: 80px 0;
+    }
+
+    .upsell-badge {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--text-on-green);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .upsell-features {
+      list-style: none;
+      margin: 32px 0;
+    }
+
+    .upsell-features li {
+      padding: 12px 0;
+      color: var(--text-body);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .upsell-features li::before {
+      content: '✔';
+      color: var(--green-primary);
+      font-weight: 600;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .upsell-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: var(--text-primary);
+      margin: 32px 0;
+    }
+
+    .upsell-price-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--green-line);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--green-primary);
+      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--green-primary);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 80px 48px 40px;
+      margin-top: 100px;
+    }
+
+    footer .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer h3 {
+      color: var(--text-on-green);
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: var(--text-on-dark);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      color: var(--text-on-dark);
+      border-bottom: 1px solid rgba(242, 242, 236, 0.3);
+      transition: border-color 0.3s ease;
+    }
+
+    footer a:hover {
+      border-bottom-color: var(--text-on-green);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(242, 242, 236, 0.2);
+    }
+
+    .footer-col h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--text-on-green);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-on-dark-muted);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade {
+      opacity: 0;
+    }
+
+    .fade.visible {
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .d1 { animation-delay: 0s; }
+    .d2 { animation-delay: 0.05s; }
+    .d3 { animation-delay: 0.10s; }
+    .d4 { animation-delay: 0.15s; }
+    .d5 { animation-delay: 0.25s; }
+
+    /* Process Steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .step {
+      background-color: var(--bg-white);
+      border: 1px solid var(--green-line);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      border-color: var(--green-primary);
+      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+    }
+
+    .step-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--green-primary);
+      margin-bottom: 16px;
+    }
+
+    .step h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--text-body);
+    }
+
+    /* USP Items */
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .usp-item {
+      display: flex;
+      gap: 20px;
+    }
+
+    .usp-icon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--green-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-primary);
+      font-weight: 600;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .usp-content h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .usp-content p {
+      font-size: 14px;
+      color: var(--text-body);
+    }
+
+    /* Chatbot */
+    .chat-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .chat-button {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .chat-button:hover {
+      background-color: var(--green-hover);
+      transform: scale(1.05);
+    }
+
+    .chat-window {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 380px;
+      height: 520px;
+      background-color: var(--bg-white);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-window.active {
+      display: flex;
+    }
+
+    .chat-header {
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .chat-header button {
+      background: none;
+      border: none;
+      color: var(--text-on-green);
+      cursor: pointer;
+      font-size: 20px;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-message {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chat-message.user {
+      justify-content: flex-end;
+    }
+
+    .chat-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .chat-bubble {
+      max-width: 260px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .chat-message.assistant .chat-bubble {
+      background-color: var(--bg-secondary);
+      color: var(--text-body);
+    }
+
+    .chat-message.user .chat-bubble {
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+    }
+
+    .chat-input {
+      padding: 16px;
+      border-top: 1px solid var(--green-line);
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-input input {
+      flex: 1;
+      border: 1px solid var(--green-line);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-body);
+    }
+
+    .chat-input input:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 2px rgba(45, 80, 22, 0.1);
+    }
+
+    .chat-input button {
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .chat-input button:hover {
+      background-color: var(--green-hover);
+    }
+
+    .quick-prompts {
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px solid var(--green-line);
+    }
+
+    .quick-prompt {
+      background-color: var(--green-dim);
+      border: 1px solid var(--green-line);
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      color: var(--green-primary);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .quick-prompt:hover {
+      background-color: var(--green-primary);
+      color: var(--text-on-green);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      section {
+        padding: 60px 32px;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .usp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      nav .nav-links {
+        display: none;
+      }
+
+      nav .hamburger {
+        display: flex;
+      }
+
+      main {
+        padding-top: 68px;
+      }
+
+      section {
+        padding: 60px 24px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .btn-primary, .btn-secondary, .btn-gold {
+        width: 100%;
+        text-align: center;
+      }
+
+      .upsell-box {
+        padding: 24px;
+      }
+
+      .chat-window {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        max-width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 0 16px;
+      }
+
+      section {
+        padding: 48px 16px;
+      }
+
+      .card, .step, .testimonial-card {
+        padding: 20px;
+      }
+
+      .btn-primary, .btn-secondary, .btn-gold {
+        font-size: 12px;
+        padding: 12px 20px;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+        margin-bottom: 16px;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      .upsell-box {
+        padding: 16px;
+      }
+
+      .process-steps {
+        gap: 16px;
+      }
+
+      .footer-bottom {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo"><img src="bilder/logga.svg" alt="Trädgårdsgänget" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="tjanster.html">Tjänster</a></li>
+      <li><a href="om-oss.html">Om oss</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="tel:0764051370" class="btn-call">Ring oss →</a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="tjanster.html">Tjänster</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="faq.html">FAQ</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:0764051370">Ring oss: 076-405 13 70</a>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="section-label fade d1">Trädgårdstjänster i Stockholms län</div>
+        <h1 class="fade d2">Vi tar hand om din trädgård — så att du kan <em>njuta</em> av den</h1>
+        <p class="fade d3">Vi erbjuder professionella trädgårdstjänster i hela Stockholms län. Från gräsklippning och häckklippning till komplett trädgårdsskötsel. Med RUT-avdrag på 50% blir tjänsterna ännu mer lönsamma.</p>
+        <div class="hero-cta fade d4">
+          <a href="kontakt.html" class="btn-primary">Kontakta oss</a>
+          <a href="tjanster.html" class="btn-secondary">Se våra tjänster</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tjänsteöversikt -->
+    <section>
+      <div class="section-label fade d1">VÅRA TJÄNSTER</div>
+      <h2 class="fade d2">Det vi gör <em>bäst</em></h2>
+      <div class="grid-3">
+        <div class="card fade d3">
+          <div class="img-placeholder">[Bild: Gräsklippning]</div>
+          <h3>Gräsklippning</h3>
+          <p>Vacker och välfruktad gräsmatta året om. Vi hanterar allt från regelbunden klippning till höststädning.</p>
+          <a href="kontakt.html" class="btn-ghost">Be om offert →</a>
+        </div>
+        <div class="card fade d4">
+          <div class="img-placeholder">[Bild: Häckklippning]</div>
+          <h3>Häckklippning</h3>
+          <p>Vi skapar vackra, välformade häckar som ramar in din trädgård. Miljövänlig och professionell beskärning.</p>
+          <a href="kontakt.html" class="btn-ghost">Be om offert →</a>
+        </div>
+        <div class="card fade d5">
+          <div class="img-placeholder">[Bild: Beskärning]</div>
+          <h3>Beskärning</h3>
+          <p>Träd och buskar får nytt liv. Vi beskär med omsorg för växtens hälsa och din trädgårds skönhet.</p>
+          <a href="kontakt.html" class="btn-ghost">Be om offert →</a>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 48px;">
+        <a href="tjanster.html" class="btn-ghost">Visa alla tjänster →</a>
+      </p>
+    </section>
+
+    <!-- Så här jobbar vi -->
+    <section>
+      <div class="section-label fade d1">VÅR PROCESS</div>
+      <h2 class="fade d2">Från första samtalet till <em>färdig</em> trädgård</h2>
+      <p class="fade d3" style="max-width: 700px; margin-bottom: 48px;">Du och vi har alltid samma bild av vad som ska göras. Tydlighet är viktigt, därför dokumenterar vi med foto varje arbetssteg.</p>
+      <div class="process-steps">
+        <div class="step fade d3">
+          <div class="step-number">1</div>
+          <h4>Kontakta oss</h4>
+          <p>Ring eller mejla. Vi hör av oss samma dag.</p>
+        </div>
+        <div class="step fade d4">
+          <div class="step-number">2</div>
+          <h4>Besiktning</h4>
+          <p>Vi besöker din trädgård och går igenom vad som behöver göras.</p>
+        </div>
+        <div class="step fade d5">
+          <div class="step-number">3</div>
+          <h4>Offert</h4>
+          <p>Du får en offert med tydlig arbetsbeskrivning och priser.</p>
+        </div>
+        <div class="step fade d5">
+          <div class="step-number">4</div>
+          <h4>Vi utför arbetet</h4>
+          <p>Vi sätter igång och håller vad vi lovade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Varför Trädgårdsgänget -->
+    <section>
+      <div class="section-label fade d1">VARFÖR OSS</div>
+      <h2 class="fade d2">Det här gör oss <em>annorlunda</em></h2>
+      <div class="usp-grid">
+        <div class="usp-item fade d3">
+          <div class="usp-icon">✓</div>
+          <div class="usp-content">
+            <h4>F-skatt & RUT-avdrag (50%)</h4>
+            <p>Vi är registrerade för RUT-arbete. Du drar av 50% direkt på fakturan.</p>
+          </div>
+        </div>
+        <div class="usp-item fade d4">
+          <div class="usp-icon">✓</div>
+          <div class="usp-content">
+            <h4>Femte säsongen</h4>
+            <p>Vi jobbar året om — ingen unpåpllerad trädgård när andra vilar.</p>
+          </div>
+        </div>
+        <div class="usp-item fade d3">
+          <div class="usp-icon">✓</div>
+          <div class="usp-content">
+            <h4>Hela Stockholms län</h4>
+            <p>Vi åker till dig, oavsett om du bor i centrum eller utskäringar.</p>
+          </div>
+        </div>
+        <div class="usp-item fade d4">
+          <div class="usp-icon">✓</div>
+          <div class="usp-content">
+            <h4>Arbetsbeskrivning med bilder</h4>
+            <p>Du vet exakt vad vi gjort. Varje jobb dokumenteras innan och efter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RUT-avdrag Info -->
+    <section>
+      <div class="rut-info fade d1">
+        <strong>RUT-avdrag (50 %)</strong> dras direkt på fakturan — du behöver inte göra något själv. Du betalar bara hälften. Läs mer på <a href="#">skatteverket.se</a>.
+      </div>
+    </section>
+
+    <!-- Löpande skötsel -->
+    <section>
+      <div class="upsell-box fade d1">
+        <span class="upsell-badge">NYTT FÖR 2026</span>
+        <h2>Slipp tänka på trädgården — vi har <em>koll</em></h2>
+        <p style="margin: 20px 0 32px 0;">Vår nya löpande skötselservice är perfekt för dig som vill ha en vacker trädgård utan att behöva tänka på den. Vi hanterar allt från gräsklippning till höststädning under ett och samma avtal.</p>
+        <ul class="upsell-features">
+          <li>4–6 besök per år efter behov</li>
+          <li>Beskärning, vårstädning och höstfix ingår</li>
+          <li>Digitalt trädkort över din trädgård</li>
+          <li>15% rabatt på tilläggsarbete</li>
+          <li>Fri rådgivning när vi är där</li>
+          <li>Prioriterad bokning</li>
+        </ul>
+        <div class="upsell-price">
+          Från 750 kr/mån
+          <span class="upsell-price-sub">efter RUT-avdrag (ordinarie 1 500 kr/mån inkl. moms)</span>
+        </div>
+        <a href="kontakt.html" class="btn-gold">Boka kostnadsfritt samtal</a>
+      </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section>
+      <div class="section-label fade d1">KUNDRÖSTER</div>
+      <h2 class="fade d2">Vad våra kunder <em>säger</em></h2>
+      <div class="grid-3">
+        <div class="testimonial-card fade d3">
+          <p class="testimonial-text">"Mycket nöjd med Trädgårdsgänget! De är pålitliga, proffesionella och min trädgård har aldrig sett bättre ut."</p>
+          <div class="testimonial-author">Maria Andersson, Sundbyberg</div>
+        </div>
+        <div class="testimonial-card fade d4">
+          <p class="testimonial-text">"Bra priser, snabb service och de respekterar min trädgård. Kan varmt rekommendera!"</p>
+          <div class="testimonial-author">Johan Bergström, Bromma</div>
+        </div>
+        <div class="testimonial-card fade d5">
+          <p class="testimonial-text">"Slutligen någon som verkar älska sitt arbete! Deras lovar är guld värda."</p>
+          <div class="testimonial-author">Eva Larsson, Södermalm</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section>
+      <h2 class="fade d1">Berätta om din <em>trädgård</em></h2>
+      <p class="fade d2" style="max-width: 700px; margin-bottom: 32px;">Oavsett om du behöver en engångsskörd eller löpande vård — vi hjälper gärna. Ring oss eller fyll i kontaktformuläret så får du ett svar direkt.</p>
+      <a href="kontakt.html" class="btn-primary fade d3">Kontakta oss</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Trädgårdsgänget</h3>
+          <p>Ursviks Trädgårdsgäng AB<br>Org.nr 559431-2737</p>
+          <p>Länsmansbacken 3<br>174 46 Sundbyberg</p>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <p><a href="tel:0764051370">076-405 13 70</a></p>
+          <p><a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Följ oss</h4>
+          <ul class="footer-links">
+            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Vi gör Sundbybergs trädgårdar vackrare — sedan 2021</p>
+        <p>© 2026 Ursviks Trädgårdsgäng AB</p>
+        <div>
+          <a href="integritetspolicy.html">Integritetspolicy</a> ·
+          <a href="cookiepolicy.html">Cookiepolicy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div class="chat-widget">
+    <button class="chat-button" id="chatButton">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <h3>Trädgårdsgänget</h3>
+        <button id="closeChat">×</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message assistant">
+          <div class="chat-avatar">T</div>
+          <div class="chat-bubble">Hej! Jag är Trädgårdsgängets digitala trädgårdsrådgivare. Ställ en fråga om din trädgård så hjälper jag dig.</div>
+        </div>
+      </div>
+      <div class="quick-prompts">
+        <button class="quick-prompt" data-prompt="Vad behöver min trädgård just nu?">Vad behöver min trädgård just nu?</button>
+        <button class="quick-prompt" data-prompt="Hur fungerar RUT-avdrag?">Hur fungerar RUT-avdrag?</button>
+        <button class="quick-prompt" data-prompt="Berätta om löpande skötsel">Berätta om löpande skötsel</button>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Skriv din fråga...">
+        <button id="sendButton">Skicka</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Trädgårdsgänget",
+    "image": "https://tradgardsganget.se/logo.png",
+    "description": "Professionella trädgårdstjänster i Stockholms län med RUT-avdrag",
+    "url": "https://tradgardsganget.se",
+    "telephone": "+46764051370",
+    "email": "info@tradgardsganget.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Länsmansbacken 3",
+      "addressLocality": "Sundbyberg",
+      "postalCode": "174 46",
+      "addressCountry": "SE"
+    },
+    "areaServed": "Stockholms län",
+    "priceRange": "$$",
+    "serviceType": "Garden Services",
+    "foundingDate": "2021"
+  }
+  </script>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Fade-up animations with IntersectionObserver
+    const observerOptions = {
+      threshold: 0.12
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Chatbot
+    const chatButton = document.getElementById('chatButton');
+    const chatWindow = document.getElementById('chatWindow');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendButton = document.getElementById('sendButton');
+    const chatMessages = document.getElementById('chatMessages');
+    const quickPrompts = document.querySelectorAll('.quick-prompt');
+
+    chatButton.addEventListener('click', () => {
+      chatWindow.classList.toggle('active');
+    });
+
+    closeChat.addEventListener('click', () => {
+      chatWindow.classList.remove('active');
+    });
+
+    // Quick prompts
+    quickPrompts.forEach(button => {
+      button.addEventListener('click', () => {
+        const prompt = button.getAttribute('data-prompt');
+        chatInput.value = prompt;
+        sendMessage();
+      });
+    });
+
+    // Send message
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      // Add user message to chat
+      const userDiv = document.createElement('div');
+      userDiv.className = 'chat-message user';
+      userDiv.innerHTML = `<div class="chat-bubble">${escapeHtml(message)}</div>`;
+      chatMessages.appendChild(userDiv);
+
+      chatInput.value = '';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Simulate assistant response (in production, this would be SSE from the backend)
+      setTimeout(() => {
+        const assistantDiv = document.createElement('div');
+        assistantDiv.className = 'chat-message assistant';
+        assistantDiv.innerHTML = `
+          <div class="chat-avatar">T</div>
+          <div class="chat-bubble">Tack för din fråga! Vi jobbar på att integrera AI-stödet. För omedelbar hjälp, ring oss på <strong>076-405 13 70</strong> eller mejla <strong>info@tradgardsganget.se</strong>.</div>
+        `;
+        chatMessages.appendChild(assistantDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 800);
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    // Escape HTML
+    function escapeHtml(text) {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, m => map[m]);
+    }
+  </script>
+
+  <script src="tg-consent.js"></script>
+</body>
+</html>

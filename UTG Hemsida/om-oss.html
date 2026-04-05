@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lär känna Trädgårdsgänget — ett passionerat team bakom Stockholms vackraste trädgårdar. Lokalt rotade, personligt drivet sedan 2021.">
+  <title>Om oss — Trädgårdsgänget — Trädgårdstjänster Stockholms län</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #FAFAF5;
+      --bg-secondary: #F2F2EC;
+      --bg-accent: #EDF3EA;
+      --bg-dark: #1A2A10;
+      --bg-white: #FFFFFF;
+      --green-primary: #2D5016;
+      --green-hover: #3A6B1E;
+      --green-light: #4A8028;
+      --green-dim: rgba(45, 80, 22, 0.06);
+      --green-line: rgba(45, 80, 22, 0.18);
+      --gold: #8B7533;
+      --gold-light: #A89245;
+      --gold-dim: rgba(139, 117, 51, 0.08);
+      --gold-line: rgba(139, 117, 51, 0.20);
+      --text-primary: #1A1A1A;
+      --text-body: #3D3D3D;
+      --text-muted: rgba(26, 26, 26, 0.55);
+      --text-on-dark: #F2F2EC;
+      --text-on-dark-muted: rgba(242, 242, 236, 0.6);
+      --text-on-green: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-body);
+      background-color: var(--bg-primary);
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2' /%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.012'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 68px;
+      background: rgba(250, 250, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--green-line);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+    }
+
+    nav .nav-container {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    nav .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--green-primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo-img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      text-decoration: none;
+      color: var(--text-body);
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--green-primary);
+    }
+
+    nav .nav-links a.active {
+      color: var(--green-primary);
+      font-weight: 500;
+    }
+
+    nav .cta-btn {
+      background: var(--green-primary);
+      color: var(--text-on-green);
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+    }
+
+    nav .cta-btn:hover {
+      background: var(--green-hover);
+    }
+
+    nav .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+
+    nav .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-body);
+      transition: all 0.3s ease;
+    }
+
+    nav .nav-links.mobile-open {
+      display: flex !important;
+    }
+
+    @media (max-width: 820px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      nav .hamburger {
+        display: flex;
+      }
+
+      nav .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--green-line);
+        padding: 24px;
+        display: none;
+      }
+
+      nav .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--green-line);
+      }
+
+      nav .cta-btn {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+      }
+    }
+
+    /* Main content padding adjustment */
+    body {
+      padding-top: 68px;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--green-primary);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section.label {
+      font-family: 'DM Serif Display', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-primary);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 24px;
+      }
+    }
+
+    /* Fade-up animation */
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-fade].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 100px 48px 80px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-body);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 24px 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .card {
+      background: var(--bg-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(45, 80, 22, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: var(--green-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card-body {
+      padding: 32px 24px;
+    }
+
+    .card-body h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .card-role {
+      color: var(--green-primary);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card-bio {
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* Tagline section */
+    .tagline-section {
+      text-align: center;
+      padding: 100px 48px;
+      background: linear-gradient(135deg, var(--green-dim) 0%, transparent 100%);
+      border-radius: 8px;
+      margin: 60px 0;
+    }
+
+    .tagline-section p {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--green-primary);
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .tagline-section {
+        padding: 60px 24px;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 80px 48px;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--green-primary);
+      color: var(--text-on-green);
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: background 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-hover);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: 60px 48px;
+      margin-top: 100px;
+    }
+
+    footer .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer .footer-top {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(45, 80, 22, 0.2);
+    }
+
+    footer h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: var(--text-on-dark);
+    }
+
+    footer p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--text-on-dark);
+    }
+
+    footer .footer-bottom {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(242, 242, 236, 0.1);
+      font-size: 12px;
+      color: var(--text-on-dark-muted);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 8px;
+    }
+
+    .footer-social {
+      margin-top: 16px;
+    }
+
+    .footer-social a {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        padding: 40px 24px;
+      }
+
+      footer .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* Chatbot Widget */
+    .chatbot-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 998;
+    }
+
+    .chatbot-toggle {
+      width: 56px;
+      height: 56px;
+      background: var(--green-primary);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+    }
+
+    .chatbot-toggle:hover {
+      background: var(--green-hover);
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(45, 80, 22, 0.25);
+    }
+
+    .chatbot-toggle.active {
+      background: var(--green-hover);
+    }
+
+    .chatbot-window {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 380px;
+      max-height: 600px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chatbot-window.active {
+      display: flex;
+    }
+
+    .chatbot-header {
+      background: var(--green-primary);
+      color: white;
+      padding: 20px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+    }
+
+    .chatbot-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chatbot-message {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .chatbot-message.user {
+      background: var(--green-dim);
+      color: var(--text-body);
+      align-self: flex-end;
+      max-width: 80%;
+    }
+
+    .chatbot-message.bot {
+      background: var(--bg-secondary);
+      color: var(--text-body);
+      align-self: flex-start;
+      max-width: 80%;
+    }
+
+    .chatbot-input {
+      display: flex;
+      gap: 8px;
+      padding: 16px;
+      border-top: 1px solid var(--green-line);
+    }
+
+    .chatbot-input input {
+      flex: 1;
+      border: 1px solid var(--green-line);
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .chatbot-input input:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 3px var(--green-dim);
+    }
+
+    .chatbot-input button {
+      background: var(--green-primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .chatbot-input button:hover {
+      background: var(--green-hover);
+    }
+
+    @media (max-width: 480px) {
+      .chatbot-window {
+        width: calc(100vw - 48px);
+        max-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="bilder/logga.svg" alt="Trädgårdsgänget" class="nav-logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="tjanster.html">Tjänster</a></li>
+        <li><a href="om-oss.html" class="active">Om oss</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="tel:0764051370" class="cta-btn">Ring oss →</a>
+      <div class="hamburger" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" data-fade>
+      <span class="label">Om oss</span>
+      <h1>Vi startade med en gräsklippare och en <em>idé</em></h1>
+      <p>År 2021 började två kompisar med en enkelt utrustning och en stor dröm: att göra Stockholms trädgårdar vackrare. Idag är vi ett växande team som älskar det vi gör. Varje trädgård är unik, och vi möter den med samma engagemang och passion som då vi började.</p>
+    </section>
+
+    <!-- Our Story Section -->
+    <section data-fade>
+      <span class="label">Vår historia</span>
+      <h2>Femte säsongen — och vi <em>älskar</em> fortfarande varje dag</h2>
+      <p style="margin-bottom: 24px;">Vi är djupt rotade i Sundbyberg och arbetar genom hela Stockholms län. Från små balkongprojekt till stora trädgårdsomgestaltningar — varje uppdrag är viktigt för oss. Vi är inte ett stort företag med anonyma arbetare. Vi är människor som brinner för trädgårdar, och vi lär känna våra kunder och deras önskemål.</p>
+      <p style="margin-bottom: 24px;">År 2021 registrerade vi Ursviks Trädgårdsgäng AB. Det började med två personer, och vi har växt både i antal och i erfarenhet. Men vårt fokus på personlig service och handgjord kvalitet är densamma. Vi lyssnar, vi förstår, och vi levererar resultat som överträffar förväntningar.</p>
+      <p>Från vårstädning till höststädning, från att plantera nya växter till att skära hakväxter — vi kan det mesta. Och eftersom vi erbjuder RUT-avdrag sparar våra stockholmare både tid och pengar. Vi är stolta över att ha möjligheten att göra en skillnad i Stockholmsborna's liv genom att skapa och underhålla sköna uterum.</p>
+    </section>
+
+    <!-- Team Section -->
+    <section data-fade>
+      <span class="label">Teamet</span>
+      <h2>Människorna bakom <em>trädgårdarna</em></h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-body">
+            <h3>Niklas Andersson</h3>
+            <span class="card-role">Grundare</span>
+            <p class="card-bio">Niklas startade Trädgårdsgänget 2021 med en vision att göra Stockholms trädgårdar vackrare. Med ett passionerat öga för detaljer och många år av trädgårdskunskap leder han teamet med engagemang och entusiasm.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-body">
+            <h3>Alfred</h3>
+            <span class="card-role">Medarbetare & Co-ägare</span>
+            <p class="card-bio">Alfred är en del av Trädgårdsgängets kärna och är också medgrundare av Good To Go Golf. Hans dedikation till kvalitet och kundservice är en av hörnstenarnas i vårt framgångsrika arbete.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-body">
+            <h3>Patrik Wicklén</h3>
+            <span class="card-role">Medarbetare</span>
+            <p class="card-bio">Patrik är en erfaren trädgårdsmästare med djup kunskap om växter och planering. Han säkerställer att varje projekt genomförs med precision och omtanke för både estetik och växternas behov.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Fotografi ej tillgängligt</div>
+          <div class="card-body">
+            <h3>Simson Pollak</h3>
+            <span class="card-role">Medarbetare</span>
+            <p class="card-bio">Simson gick med i teamet 2025 och har redan gjort ett starkt intryck. Med sitt friska perspektiv och sitt engagemang bidrar han till att upprätthålla våra höga standarder och kundnöjdhet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tagline Section -->
+    <section class="tagline-section" data-fade>
+      <p>Vi gör Sundbybergs trädgårdar vackrare — sedan 2021</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-fade>
+      <h2>Vill du veta mer om <em>oss</em>?</h2>
+      <p style="margin-bottom: 32px; color: var(--text-body);">Kontakta oss idag så berättar vi mer om hur vi kan förvandla din trädgård.</p>
+      <a href="kontakt.html" class="btn-primary">Skicka förfrågan</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div>
+          <h4>Trädgårdsgänget</h4>
+          <p>Ursviks Trädgårdsgäng AB</p>
+          <p>Org.nr 559431-2737</p>
+        </div>
+        <div>
+          <h4>Adress</h4>
+          <p>Länsmansbacken 3</p>
+          <p>174 46 Sundbyberg</p>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p><a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a></p>
+          <p><a href="tel:0764051370">076-405 13 70</a></p>
+        </div>
+        <div>
+          <h4>Följ oss</h4>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>"Vi gör Sundbybergs trädgårdar vackrare — sedan 2021"</p>
+        <p>© 2026 Trädgårdsgänget. Alla rättigheter reserverade.</p>
+        <p><a href="integritetspolicy.html">Integritetspolicy</a> · <a href="cookiepolicy.html">Cookiepolicy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget">
+    <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+    <div class="chatbot-window" id="chatbotWindow">
+      <div class="chatbot-header">Trädgårdsgänget AI</div>
+      <div class="chatbot-messages" id="chatbotMessages"></div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Ställ en fråga...">
+        <button id="chatbotSend">Skicka</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navigation functionality
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+      });
+    });
+
+    // Fade-up animation observer
+    const observerOptions = {
+      threshold: 0.12,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-fade]').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Chatbot functionality
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbotWindow.classList.toggle('active');
+      chatbotToggle.classList.toggle('active');
+      if (chatbotWindow.classList.contains('active')) {
+        chatbotInput.focus();
+      }
+    });
+
+    chatbotSend.addEventListener('click', sendMessage);
+    chatbotInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    function sendMessage() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+
+      // Add user message
+      const userMessage = document.createElement('div');
+      userMessage.className = 'chatbot-message user';
+      userMessage.textContent = message;
+      chatbotMessages.appendChild(userMessage);
+
+      chatbotInput.value = '';
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+      // Simulate bot response (in production, use SSE streaming from /.netlify/functions/tg-ai-stream)
+      const botMessage = document.createElement('div');
+      botMessage.className = 'chatbot-message bot';
+      botMessage.textContent = 'Tack för din fråga! Vi svarar på vardagar inom kort.';
+
+      setTimeout(() => {
+        chatbotMessages.appendChild(botMessage);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }, 500);
+    }
+
+    // Initialize with welcome message
+    window.addEventListener('load', () => {
+      const welcomeMessage = document.createElement('div');
+      welcomeMessage.className = 'chatbot-message bot';
+      welcomeMessage.textContent = 'Hej! Hur kan vi hjälpa dig med din trädgård?';
+      chatbotMessages.appendChild(welcomeMessage);
+    });
+  </script>
+
+  <script src="tg-consent.js"></script>
+</body>
+</html>

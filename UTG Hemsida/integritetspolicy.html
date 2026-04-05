@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integritetspolicy — Trädgårdsgänget</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF5;
+            --bg-secondary: #F2F2EC;
+            --bg-accent: #EDF3EA;
+            --bg-dark: #1A2A10;
+            --bg-white: #FFFFFF;
+            --green-primary: #2D5016;
+            --green-hover: #3A6B1E;
+            --green-light: #4A8028;
+            --green-dim: rgba(45, 80, 22, 0.06);
+            --green-line: rgba(45, 80, 22, 0.18);
+            --gold: #8B7533;
+            --gold-light: #A89245;
+            --gold-dim: rgba(139, 117, 51, 0.08);
+            --gold-line: rgba(139, 117, 51, 0.20);
+            --text-primary: #1A1A1A;
+            --text-body: #3D3D3D;
+            --text-muted: rgba(26, 26, 26, 0.55);
+            --text-on-dark: #F2F2EC;
+            --text-on-dark-muted: rgba(242, 242, 236, 0.6);
+            --text-on-green: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-body);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--green-hover);
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 68px;
+            background: rgba(250, 250, 245, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--green-line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+          height: 40px;
+          width: auto;
+          display: block;
+        }
+
+        nav .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav .nav-menu a {
+            color: var(--text-body);
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-menu a:hover {
+            color: var(--green-primary);
+        }
+
+        nav .call-btn {
+            background: var(--green-primary);
+            color: var(--text-on-green);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        nav .call-btn:hover {
+            background: var(--green-hover);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 820px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            nav .nav-menu {
+                display: none;
+            }
+
+            nav .call-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Main */
+        main {
+            margin-top: 68px;
+            width: 100%;
+        }
+
+        .section {
+            padding: 80px 48px;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 24px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Section label */
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--green-primary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Policy content */
+        .policy-content {
+            color: var(--text-body);
+        }
+
+        .policy-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-on-dark);
+            padding: 60px 48px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-on-dark);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--text-on-dark-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--text-on-dark);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--green-line);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-on-dark-muted);
+            font-size: 13px;
+        }
+
+        /* Chatbot Widget */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--green-primary);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .chatbot-widget:hover {
+            background: var(--green-hover);
+            box-shadow: 0 6px 16px rgba(45, 80, 22, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-widget {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* Noise texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" seed="2"/></filter><rect width="100" height="100" fill="rgba(0,0,0,0.02)" filter="url(%23n)"/></svg>');
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="bilder/logga.svg" alt="Trädgårdsgänget" class="nav-logo-img"></a>
+        <ul class="nav-menu">
+            <li><a href="tjanster.html">Tjänster</a></li>
+            <li><a href="om-oss.html">Om oss</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="tel:+46702312345" class="call-btn">Ring oss →</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section policy-content">
+            <p class="section-label">POLICY</p>
+            <h1>Integritetspolicy</h1>
+
+            <h2>1. Ansvarigt organ</h2>
+            <p>Denna integritetspolicy gäller för Ursviks Trädgårdsgäng AB, org.nr 559431-2737 ("Trädgårdsgänget"). Vi är personuppgiftsansvarig enligt GDPR för behandling av personuppgifter på denna webbplats.</p>
+
+            <h2>2. Vilka uppgifter samlar vi in?</h2>
+            <p>Vi samlar in personuppgifter när du:</p>
+            <ul>
+                <li>Fyller i kontaktformulär (namn, adress, e-post, telefon, meddelande)</li>
+                <li>Skickar intresseanmälan för vintertjänster</li>
+                <li>Kontaktar oss via e-post eller telefon</li>
+            </ul>
+            <p>Vi samlar även in teknisk information via cookies och serverloggar (se <a href="cookiepolicy.html">Cookiepolicy</a>).</p>
+
+            <h2>3. Varför behandlar vi dina uppgifter?</h2>
+            <p>Vi behandlar dina personuppgifter för att:</p>
+            <ul>
+                <li>Besvara dina förfrågningar och kontaktformulär</li>
+                <li>Ge dig offert och information om våra tjänster</li>
+                <li>Hantera dina intresseanmälningar för kommande tjänster</li>
+                <li>Upprätthålla en kundrelation och följa upp på potentiella uppdrag</li>
+                <li>Uppfylla rättsliga skyldigheter</li>
+            </ul>
+
+            <h2>4. Rättslig grund</h2>
+            <p>Vi behandlar dina uppgifter baserat på:</p>
+            <ul>
+                <li><strong>Berättigat intresse:</strong> Vi har ett berättigat intresse att svara på dina förfrågningar och följa upp på möjliga affärer</li>
+                <li><strong>Samtycke:</strong> För marknadsföring och återkontakt samlar vi in explicit samtycke</li>
+            </ul>
+
+            <h2>5. Hur länge lagrar vi dina uppgifter?</h2>
+            <p>Vi lagrar personuppgifter endast så länge som det är nödvändigt för det ändamål de samlades in för. Normalt betyder det:</p>
+            <ul>
+                <li>Kontaktformulär och intresseanmälningar: 1-2 år efter senaste kontakt</li>
+                <li>Kunduppgifter: Under avtalsperioden och 7 år därefter (bokföringskrav)</li>
+                <li>Marketing-e-post: Tills du avbeställer</li>
+            </ul>
+            <p>Efter detta raderar vi dina uppgifter säkert.</p>
+
+            <h2>6. Vem får tillgång till dina uppgifter?</h2>
+            <p>Dina personuppgifter delas endast med:</p>
+            <ul>
+                <li><strong>Trädgårdsgänget-anställda:</strong> Endast de som behöver det för att besvara din förfrågan</li>
+                <li><strong>Leverantörer:</strong> Vi använder följande tjänstleverantörer som kan få tillgång till uppgifter: e-posttjänst, webbhotell. Alla leverantörer är bindade av dataskyddsavtal</li>
+                <li><strong>Myndigheter:</strong> Om lag eller myndighet kräver det</li>
+            </ul>
+            <p>Vi säljer aldrig dina uppgifter till tredje part.</p>
+
+            <h2>7. Dina rättigheter</h2>
+            <p>Du har rätt att:</p>
+            <ul>
+                <li><strong>Tillgång:</strong> Få veta vilka uppgifter vi lagrar om dig</li>
+                <li><strong>Rättelse:</strong> Korrigera felaktiga uppgifter</li>
+                <li><strong>Radering:</strong> Begära radering av dina uppgifter (rätten att glömmas bort)</li>
+                <li><strong>Dataportabilitet:</strong> Få dina uppgifter i ett maskinläsbart format</li>
+                <li><strong>Invända:</strong> Invända mot viss behandling av dina data</li>
+                <li><strong>Återkalla samtycke:</strong> Du kan när som helst återkalla ditt samtycke till marknadsföring</li>
+            </ul>
+            <p>För att utöva dessa rättigheter, kontakta oss på <a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a>.</p>
+
+            <h2>8. Säkerhet</h2>
+            <p>Vi skyddar dina personuppgifter med lämpliga tekniska och organisatoriska åtgärder, inklusive enkryptering och åtkomsträttigheter.</p>
+
+            <h2>9. Cookies</h2>
+            <p>Vi använder cookies för att förbättra din upplevelse. För detaljer, se vår <a href="cookiepolicy.html">Cookiepolicy</a>.</p>
+
+            <h2>10. Ändringar av denna policy</h2>
+            <p>Vi kan uppdatera denna policy ibland. Vi meddelar dig om ändringar genom att publicera den nya policyn på denna sida och uppdatera "Senast uppdaterad"-datumet.</p>
+
+            <h2>11. Kontakta oss</h2>
+            <p>Om du har frågor om denna integritetspolicy eller hur vi behandlar dina personuppgifter, kontakta oss:</p>
+            <ul>
+                <li><strong>E-post:</strong> <a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a></li>
+                <li><strong>Post:</strong> Ursviks Trädgårdsgäng AB, Sverige</li>
+            </ul>
+
+            <p><strong>Om du är missnöjd</strong> och vill lämna klagomål, kan du kontakta Integritetsmyndigheten (IMY) på www.imy.se.</p>
+
+            <p style="margin-top: 3rem; color: var(--text-muted); font-size: 13px;"><strong>Senast uppdaterad:</strong> April 2026</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Trädgårdsgänget</h3>
+                <p>Ursviks Trädgårdsgäng AB<br>Org.nr: 559431-2737<br>sedan 2021</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tjänster</h3>
+                <a href="tjanster.html">Alla tjänster</a>
+                <a href="vintertjanster.html">Vintertjänster</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <a href="kontakt.html">Kontaktformulär</a>
+                <a href="tel:+46702312345">Ring oss</a>
+            </div>
+            <div class="footer-section">
+                <h3>Policy</h3>
+                <a href="integritetspolicy.html">Integritetspolicy</a>
+                <a href="cookiepolicy.html">Cookiepolicy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Trädgårdsgänget. Alla rättigheter förbehållna.
+        </div>
+    </footer>
+
+    <div class="chatbot-widget" id="chatbot-widget">💬</div>
+
+    <script src="tg-consent.js"></script>
+    <script>
+        // Chatbot widget placeholder
+        document.getElementById('chatbot-widget').addEventListener('click', function() {
+            console.log('Chatbot clicked - would open chat panel');
+        });
+    </script>
+</body>
+</html>
