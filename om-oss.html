@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om oss — Trädgårdsgänget — Trädgårdstjänster Stockholms län</title>
+<meta name="description" content="Möt teamet bakom Trädgårdsgänget. Vi startade med en gräsklippare och en idé — nu är vi inne på femte säsongen i Stockholms län.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FAFAF5">
+<meta property="og:title" content="Om oss — Trädgårdsgänget">
+<meta property="og:description" content="Möt teamet bakom Trädgårdsgänget i Stockholms län.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tradgardsganget.se/om-oss">
+<meta property="og:site_name" content="Trädgårdsgänget">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg-primary:#FAFAF5;--bg-secondary:#F2F2EC;--bg-accent:#E8F0E4;--bg-dark:#1A2E1A;--green-primary:#4A7C59;--green-dark:#2C5E3F;--green-light:#6B9E7A;--green-dim:rgba(74,124,89,0.08);--green-line:rgba(74,124,89,0.20);--text-primary:#1A2E1A;--text-body:#3D4F3D;--text-muted:rgba(26,46,26,0.55);--text-dim:rgba(26,46,26,0.35);--text-on-dark:#F2F2EC;--text-on-dark-muted:rgba(242,242,236,0.6);--earth:#8B7355;--earth-light:#C4B49A}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:15px;line-height:1.7;color:var(--text-body);background:var(--bg-primary);-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:0.015;pointer-events:none;z-index:0}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;color:var(--text-primary);line-height:1.15}
+h1{font-size:clamp(2.2rem,6vw,4rem)}h2{font-size:clamp(1.75rem,4vw,2.75rem)}h3{font-size:clamp(1.25rem,2.5vw,1.6rem)}
+h1 em,h2 em,h3 em{font-style:italic}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(250,250,245,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--green-line);z-index:10000;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,3rem)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--text-primary);text-decoration:none;letter-spacing:0.01em}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text-body);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--green-primary)}.nav-links a.active{color:var(--green-primary)}
+.nav-cta{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--green-primary)!important;letter-spacing:0.02em}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:10001}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);transition:transform 0.3s,opacity 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;top:68px;background:rgba(250,250,245,0.98);backdrop-filter:blur(16px);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.open{display:flex}.mobile-menu a{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:500;color:var(--text-primary);text-decoration:none}
+@media(max-width:820px){.nav-links{display:none}.hamburger{display:flex}}
+section{position:relative;z-index:1;padding:80px 48px;max-width:1100px;margin:0 auto}
+@media(max-width:768px){section{padding:60px 24px}}
+.section-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-primary);margin-bottom:20px}
+.btn-primary{background:var(--green-primary);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--green-primary);border:1.5px solid var(--green-line);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.2s,color 0.2s}
+.btn-secondary:hover{border-color:var(--green-primary);color:var(--green-dark)}
+.img-placeholder{background:var(--bg-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:13px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
+.hero{padding-top:148px;padding-bottom:60px;text-align:center;max-width:700px;margin:0 auto}
+.hero p{font-size:17px;line-height:1.75;color:var(--text-body);margin-top:20px;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* Story section */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story-text h2{margin-bottom:16px}
+.story-text p{margin-bottom:16px;font-size:15px;line-height:1.75}
+.story-img{aspect-ratio:4/3}
+@media(max-width:768px){.story{grid-template-columns:1fr;gap:32px}}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.team-card{text-align:center}
+.team-photo{width:100%;aspect-ratio:1;background:var(--bg-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:13px;margin-bottom:16px}
+.team-card h3{font-size:18px;margin-bottom:4px}
+.team-card .role{font-size:13px;color:var(--text-muted);font-weight:500}
+.team-card .bio{font-size:14px;color:var(--text-body);margin-top:8px;line-height:1.6}
+@media(max-width:768px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+
+.cta-section{background:var(--bg-secondary);border-radius:16px;padding:60px 48px;text-align:center;max-width:1100px;margin:0 auto}
+.cta-section h2{margin-bottom:12px}.cta-section p{margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+@media(max-width:768px){.cta-section{padding:40px 24px}}
+footer{background:var(--bg-dark);color:var(--text-on-dark);padding:60px 48px 32px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand .footer-logo{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:12px}
+.footer-brand p{font-size:13px;color:var(--text-on-dark-muted);line-height:1.7}
+.footer-col h4{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-on-dark-muted);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:var(--green-light);text-decoration:none;margin-bottom:10px;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1100px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(242,242,236,0.1);text-align:center;font-size:12px;color:var(--text-on-dark-muted)}
+@media(max-width:768px){footer{padding:40px 24px 24px}.footer-inner{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0}.fade.visible{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards}
+.fade.visible.d1{animation-delay:0s}.fade.visible.d2{animation-delay:0.1s}.fade.visible.d3{animation-delay:0.15s}.fade.visible.d4{animation-delay:0.2s}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Trädgårdsgänget</a>
+  <ul class="nav-links">
+    <li><a href="/tjanster.html">Tjänster</a></li>
+    <li><a href="/om-oss.html" class="active">Om oss</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
+    <li><a href="/kontakt.html">Kontakt</a></li>
+    <li><a href="tel:+46764051370" class="nav-cta">Ring oss →</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Meny"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Startsida</a><a href="/tjanster.html">Tjänster</a><a href="/om-oss.html" onclick="closeMenu()">Om oss</a><a href="/faq.html">FAQ</a><a href="/kontakt.html">Kontakt</a><a href="tel:+46764051370">Ring oss →</a>
+</div>
+
+<section class="hero">
+  <div class="fade d1">
+    <span class="section-label">Om oss</span>
+    <h1>Vi startade med en gräsklippare och en <em>idé</em></h1>
+    <p>Från en enkel tanke om att göra trädgårdsskötsel enklare — till ett team som tar hand om trädgårdar i hela Stockholms län.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="story fade d1">
+    <div class="story-text">
+      <h2>Vår <em>berättelse</em></h2>
+      <p>Trädgårdsgänget grundades av Niklas Andersson med en enkel ambition: att erbjuda pålitliga trädgårdstjänster till rimliga villkor, med den personliga touchen som de stora bolagen saknar.</p>
+      <p>Det som började med en gräsklippare och en liten kundkrets i Sundbyberg har vuxit till ett team av engagerade medarbetare som tar sig an allt från villaträdgårdar till parkskötsel för bostadsrättsföreningar.</p>
+      <p>Nu är vi inne på vår femte säsong — med fler återkommande kunder än någonsin och en ambition att fortsätta växa utan att tappa det personliga.</p>
+    </div>
+    <div class="img-placeholder story-img">[Bild: Teamet i arbete i en trädgård]</div>
+  </div>
+</section>
+
+<section>
+  <div class="fade d1" style="text-align:center;margin-bottom:40px;">
+    <span class="section-label">Teamet</span>
+    <h2>Vi som gör <em>jobbet</em></h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade d1">
+      <div class="team-photo">[Foto: Niklas]</div>
+      <h3>Niklas Andersson</h3>
+      <div class="role">Grundare</div>
+      <p class="bio">Startade Trädgårdsgänget och driver verksamheten med passion för trädgård och kundnöjdhet.</p>
+    </div>
+    <div class="team-card fade d2">
+      <div class="team-photo">[Foto: Alfred]</div>
+      <h3>Alfred</h3>
+      <div class="role">Medarbetare</div>
+      <p class="bio">Pålitlig och noggrann. Alfred är också delägare i Good To Go Golf vid sidan av trädgårdsarbetet.</p>
+    </div>
+    <div class="team-card fade d3">
+      <div class="team-photo">[Foto: Patrik]</div>
+      <h3>Patrik Wicklén</h3>
+      <div class="role">Medarbetare</div>
+      <p class="bio">En viktig del av gänget med öga för detaljer och ett genuint intresse för trädgårdsskötsel.</p>
+    </div>
+    <div class="team-card fade d4">
+      <div class="team-photo">[Foto: Simson]</div>
+      <h3>Simson Pollak</h3>
+      <div class="role">Medarbetare</div>
+      <p class="bio">Senaste tillskottet i teamet sedan 2025. Energisk och handlingskraftig — en perfekt matchning.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta-section fade d1">
+    <span class="section-label">Kontakt</span>
+    <h2>Vill du veta <em>mer</em>?</h2>
+    <p>Vi berättar gärna mer om hur vi kan hjälpa just din trädgård. Kontakta oss för en kostnadsfri offert.</p>
+    <a href="/kontakt.html" class="btn-primary">Kontakta oss</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="footer-logo">Trädgårdsgänget</div><p>Ursviks Trädgårdsgäng AB · Org.nr 559431-2737<br>Stockholms län · 174 46 Sundbyberg</p></div>
+    <div class="footer-col"><h4>Kontakt</h4><a href="mailto:info@tradgardsganget.se">info@tradgardsganget.se</a><a href="tel:+46764051370">076-405 13 70</a></div>
+    <div class="footer-col"><h4>Sidor</h4><a href="/">Startsida</a><a href="/tjanster.html">Tjänster</a><a href="/om-oss.html">Om oss</a><a href="/faq.html">FAQ</a><a href="/kontakt.html">Kontakt</a></div>
+    <div class="footer-col"><h4>Övrigt</h4><a href="https://www.facebook.com/Ursviks-Tradgards-Gang-112878280893630/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/ursvikstradgardsgang/" target="_blank" rel="noopener">Instagram</a><a href="/integritetspolicy.html">Integritetspolicy</a><a href="/cookiepolicy.html">Cookiepolicy</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Ursviks Trädgårdsgäng AB</div>
+</footer>
+
+<script>
+function toggleMenu(){document.querySelector('.hamburger').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open')}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
