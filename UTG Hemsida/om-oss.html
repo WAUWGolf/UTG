@@ -827,28 +827,77 @@
       if (e.key === 'Enter') sendMessage();
     });
 
-    function sendMessage() {
+    // Conversation history
+    const conversationHistory = [];
+
+    // Send message
+    async function sendMessage() {
       const message = chatbotInput.value.trim();
       if (!message) return;
 
-      // Add user message
-      const userMessage = document.createElement('div');
-      userMessage.className = 'chatbot-message user';
-      userMessage.textContent = message;
-      chatbotMessages.appendChild(userMessage);
+      // Add user message to chat
+      const userDiv = document.createElement('div');
+      userDiv.className = 'chatbot-message user';
+      userDiv.textContent = message;
+      chatbotMessages.appendChild(userDiv);
 
       chatbotInput.value = '';
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-      // Simulate bot response (in production, use SSE streaming from /.netlify/functions/tg-ai-stream)
-      const botMessage = document.createElement('div');
-      botMessage.className = 'chatbot-message bot';
-      botMessage.textContent = 'Tack för din fråga! Vi svarar på vardagar inom kort.';
+      // Add to conversation history
+      conversationHistory.push({ role: 'user', content: message });
 
-      setTimeout(() => {
-        chatbotMessages.appendChild(botMessage);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-      }, 500);
+      // Create assistant message container
+      const assistantDiv = document.createElement('div');
+      assistantDiv.className = 'chatbot-message bot';
+      chatbotMessages.appendChild(assistantDiv);
+      let fullText = '';
+
+      try {
+        const response = await fetch('/.netlify/functions/tg-ai-stream', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: conversationHistory,
+            pageContext: 'Om oss-sidan'
+          })
+        });
+
+        if (!response.ok) throw new Error('API error');
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        assistantDiv.textContent = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          const chunk = decoder.decode(value, { stream: true });
+          const lines = chunk.split('\n');
+
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const data = line.slice(6).trim();
+              if (data === '[DONE]') continue;
+              try {
+                const parsed = JSON.parse(data);
+                if (parsed.type === 'content_block_delta' && parsed.delta?.text) {
+                  fullText += parsed.delta.text;
+                  assistantDiv.textContent = fullText;
+                  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                }
+              } catch (e) { /* skip non-JSON lines */ }
+            }
+          }
+        }
+
+        conversationHistory.push({ role: 'assistant', content: fullText });
+
+      } catch (error) {
+        assistantDiv.innerHTML = 'Oj, något gick fel. Ring oss på <strong>076-405 13 70</strong> eller mejla <strong>info@tradgardsganget.se</strong> så hjälper vi dig.';
+      }
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
 
     // Initialize with welcome message
